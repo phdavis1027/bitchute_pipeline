@@ -3,10 +3,26 @@
 # See documentation in:
 # https://docs.scrapy.org/en/latest/topics/items.html
 
-import scrapy
+from scrapy import Item, Field
 
+class TopLevelCommentItem(Item):
+    comment_id = Field()
+    author_id = Field()
+    author_username = Field()
+    timestamp = Field()
+    content = Field()
+    replies = Field()
+    video = Field()
+    likes = Field()
+    dislikes = Field()
 
-class BitchuteItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+class ChildCommentItem(Item):
+    comment_id = Field()
+    author_id = Field()
+    author_username = Field()
+    timestamp = Field()
+    content = Field()
+    parent_comment_id = Field()
+    video = Field()
+    likes = Field()
+    dislikes = Field()
