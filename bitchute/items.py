@@ -26,3 +26,16 @@ class ChildCommentItem(Item):
     video = Field()
     likes = Field()
     dislikes = Field()
+
+class VideoItem(Item):
+    title = Field()
+    url = Field()
+    description = Field()
+    channel = Field()
+    timestamp = Field()
+    description = Field()
+    sensitivity = Field()
+    recommendeds = Field()
+    views = Field()
+    likes = Field()
+    dislikes = Field()
