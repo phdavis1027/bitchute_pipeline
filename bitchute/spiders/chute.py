@@ -52,7 +52,7 @@ class ChuteSpider(Spider):
     name = 'chute'
     start_urls = ['https://bitchute.com']
     scroll_script = """
-        for (let _ = 0; _ < 5; ++_) {
+        for (let _ = 0; _ < 20; ++_) {
            await new Promise(r => setTimeout(r, 500));
            window.scrollTo(0, document.body.scrollHeight)
         }
@@ -170,7 +170,7 @@ class ChuteSpider(Spider):
             href = video_card.get('href')
             url = f'https://www.bitchute.com{video_card.get("href")}'
             yield SeleniumRequest(
-                url = video_url,
+                url = url,
                 callback = self.full_scrape_video,
                 script = self.scroll_script
             )
